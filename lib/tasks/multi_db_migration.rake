@@ -35,14 +35,10 @@ namespace :multi_db_migration do
     shard_config = config.shard_config(shard)
 
     client = MultiDbMigration::RidgepoleClient.new(
+      shard_config: shard_config,
       env: ENV['RAILS_ENV'],
       config: config.db_config,
-      file: shard_config[:file],
-      spec_name: shard_config[:spec_name],
-      dry_run: dry_run,
-      ignore_tables: shard_config[:ignore_tables],
-      skip_drop_table: shard_config[:skip_drop_table],
-      mysql_change_table_comment: shard_config[:mysql_change_table_comment],
+      dry_run: dry_run
     )
 
     command = client.generate_command
