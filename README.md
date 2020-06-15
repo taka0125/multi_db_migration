@@ -2,6 +2,11 @@
 
 Multiple database migration use ridgepole
 
+## Build Status
+
+### master
+[![Build Status](https://github.com/taka0125/multi_db_migration/workflows/Ruby/badge.svg)](https://github.com/taka0125/multi_db_migration/actions)
+
 ## Installation
 
 Add this line to your application's Gemfile:
