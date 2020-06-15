@@ -1,0 +1,16 @@
+parallel_num: 1
+db:
+  config: config/database.yml
+shards:
+  primary:
+    options:
+      - --spec-name=primary
+      - --ignore-tables=^need_ignore_tables$
+      - --skip-drop-table
+      - --file=db/schemas/primary/Schemafile
+  animals:
+    options:
+      - --spec-name=animals
+      - --ignore-tables=^need_ignore_tables$
+      - --skip-drop-table
+      - --file=db/schemas/animals/Schemafile
